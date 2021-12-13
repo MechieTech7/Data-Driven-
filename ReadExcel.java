@@ -60,14 +60,7 @@ public class ReadExcel {
             WebElement confirmationMessage = driver.findElement(By.xpath("//div[text()='Thanks for submitting the form']"));
 
 
-            XSSFCell cell = sheet.getRow(i).createCell(6);
-            if (confirmationMessage.isDisplayed()) {
-                cell.setCellValue("PASS");
-
-            } else {
-                cell.setCellValue("FAIL");
-            }
-
+          
             FileOutputStream outputStream = new FileOutputStream("C:\\Users\\lokesh.chandramurthy\\IdeaProjects\\AutomatingExcel\\src\\main\\demo.xlsx");
             wb.write(outputStream);
 
