@@ -1,9 +1,6 @@
 package excelLaunch;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -20,7 +17,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class ReadExcel {
-    public static  void main(String args[]) throws IOException {
+    public  void sheetRead() throws IOException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver= new ChromeDriver();
@@ -84,5 +81,10 @@ public class ReadExcel {
 
         wb.close();
         driver.quit();
+    }
+
+    public static void main(String[] args) throws IOException {
+        ReadExcel callMethod = new ReadExcel();
+        callMethod.sheetRead();
     }
 }
